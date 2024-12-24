@@ -1,0 +1,32 @@
+
+.\c8run.exe start
+.\c8run.exe stop
+
+camunda:
+  client:
+    zeebe:
+      override:
+        Worker_Addendum:
+          enabled: false
+
+
+https://docs.camunda.io/docs/apis-tools/camunda-api-rest/specifications/create-process-instance/
+
+
+        <!-- For Spring
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-access</artifactId>
+            <version>1.5.12</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>1.5.12</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.5.12</version>
+        </dependency>-->
+

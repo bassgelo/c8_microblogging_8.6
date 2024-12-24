@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "e1f27348-5bfe-4951-b45c-8abe95bbaa2f",
+		"name": "Camunda 8 Run",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4899690"
+	},
+	"item": [
+		{
+			"name": "C8 REST API - Cookie Header",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/login?username=demo&password=demo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "demo"
+						},
+						{
+							"key": "password",
+							"value": "demo"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl --request POST 'http://localhost:8080/api/login?username=demo&password=demo' \\\r\n  --cookie-jar cookie.txt"
+			},
+			"response": [
+				{
+					"name": "Result Cookie Header",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/login?username=demo&password=demo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"login"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "demo"
+								},
+								{
+									"key": "password",
+									"value": "demo"
+								}
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Set-Cookie",
+							"value": "OPERATE-SESSION=2B314596BC810D88B6388B321C43854D; Path=/; HttpOnly; SameSite=Lax"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self'; base-uri 'self'; script-src 'self'; script-src-elem 'self' cdn.jsdelivr.net; connect-src 'self' cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' cdn.jsdelivr.net; img-src * data:; block-all-mixed-content; form-action 'self'; frame-ancestors 'none'; frame-src 'self' https:; object-src 'none'; font-src 'self' fonts.camunda.io cdn.jsdelivr.net; worker-src 'self' blob:; sandbox allow-forms allow-scripts allow-same-origin allow-popups"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 13 Nov 2024 14:12:11 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Topology",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/v2/topology",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v2",
+						"topology"
+					]
+				},
+				"description": "Generated from cURL: curl --cookie  cookie.txt  localhost:8080/v2/topology"
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE process-instances BY ID",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"processDefinitionId\": \"1234-5678\",\r\n  \"version\": 1,\r\n  \"variables\": {}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v2/process-instances",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v2",
+						"process-instances"
+					]
+				},
+				"description": "Generated from cURL: curl -L -X POST 'http://localhost:8080/v2/process-instances' \\\r\n-H 'Content-Type: application/json' \\\r\n-H 'Accept: application/json' \\\r\n--data-raw '{\r\n  \"processDefinitionId\": \"1234-5678\",\r\n  \"version\": 1,\r\n  \"variables\": {}\r\n}'"
+			},
+			"response": []
+		}
+	]
+}
